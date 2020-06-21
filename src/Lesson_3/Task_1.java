@@ -9,10 +9,8 @@ import Lesson_3.util.CarUtil;
 public class Task_1 {
     public static void main(String[] args) {
 
-        Car car = new Car();
-
         Car car1 = CarUtil.generateCar();
-        Car car2 = CarUtil.generate(car);
+        Car car2 = CarUtil.generate();
 
         System.out.println(car1);
         System.out.println(car2);

@@ -22,7 +22,8 @@ public class CarUtil {
         return car;
     }
 
-    public static Car generate(Car car) {
+    public static Car generate() {
+        Car car = new Car();
         return new Car(generateCarType(car), generateEngType(car), generatePasQnt(car), generateCarWeight(car), generateEngVlm(car));
     }
 
@@ -42,6 +43,7 @@ public class CarUtil {
             case TRUCK -> car.setCarPassengersQuantity((int) (Math.random() * 2 + 1)); //1...2
             case PASSENGER_TRUCK -> car.setCarPassengersQuantity((int) (Math.random() * 22 + 10)); //10...31
             case SPECIAL_CAR -> car.setCarPassengersQuantity((int) (Math.random() * 2 + 1)); //1...2
+            default -> throw new NullPointerException("The argument cannot be null");
         }
         return car.getCarPassengersQuantity();
     }
@@ -73,7 +75,7 @@ public class CarUtil {
     }
 
     public static double generateEngVlm(Car car) {
-        car.setCarEngineVolume((int) (Math.random() * 10 + 1) * 500);
+        car.setCarEngineVolume((int) (Math.random() * 10 + 1) * 500.0);
         return car.getCarEngineVolume();
     }
 
