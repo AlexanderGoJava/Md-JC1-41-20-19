@@ -27,7 +27,7 @@ public class CarUtil {
         generateSndSngl();
         return car;
     }
-    //12nd variant generation of the car
+    //2nd variant generation of the car
     public static Car generate() {
         Car car = new Car();
         System.out.printf("Country of origin: %s\n", Car.getCountryOrigin());

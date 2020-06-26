@@ -9,7 +9,9 @@
 package Lesson_4;
 
 import Lesson_4.domain.Car;
+import Lesson_4.domain.TechPassport;
 import Lesson_4.util.CarUtil;
+import Lesson_4.util.TechPaspUtil;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,11 +20,10 @@ import java.util.Arrays;
 
 public class Task_1 {
     public static void main(String[] args) throws IOException {
-        System.out.println("Введите размерность массива: "); //Для удобства чтения лучше вводить не более 5 элементоа
+        System.out.print("Enter array dimension: "); //Для удобства чтения лучше вводить не более 5 элементоа
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int i = Integer.parseInt(reader.readLine());
-        System.out.println("Array of cars (without sorting):");
-        System.out.println(Arrays.toString(generateCarArray(i)));
+        System.out.println("Array of cars (without sorting):\n".concat(Arrays.toString(generateCarArray(i))));
         Car[] cars = new Car[i];
         carArraySort(cars);
 //1st variant generation of the car
@@ -39,6 +40,8 @@ public class Task_1 {
         Car[] cars = new Car[i];
         for (i = 0; i < cars.length; i++) {
             Car car2 = CarUtil.generate();
+            TechPassport techPassport = TechPaspUtil.generateTechPass();
+            System.out.println(techPassport);
             car2.printTechChar();
             car2.measStopDist();
             cars[i] = car2;
