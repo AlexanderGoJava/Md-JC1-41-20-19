@@ -7,12 +7,14 @@ import java.util.Scanner;
 
 public class Task_12 {
     public static void main(String[] args) {
-        System.out.println("Введите любое вещественное число:");
+        System.out.println("Enter any real number:");
         Scanner sc = new Scanner(System.in);
         double c = sc.nextDouble();
-        System.out.println("Введённое число является неотрицательным?\n" + signOfDouble(c));
+        sc.close();
+        System.out.println("The number entered is non-negative?\n" + signOfDouble(c));
     }
 
+    //method checks if the number is non-negative
     public static boolean signOfDouble(double c) {
         boolean a = true, b = false;
         if (c >= 0) {

@@ -12,36 +12,36 @@ import java.util.Collections;
 public class Task_20 {
     public static void main(String[] args) throws IOException {
         //Массив чисел
-        System.out.println("Введите размерность численного массива:");
+        System.out.println("Enter the dimension of the numeric array:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeNum = Integer.parseInt(reader.readLine()), i;
         if (arraySizeNum < 0) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         double[] arrayNum = new double[arraySizeNum];
-        System.out.printf("Введите %d чисел:\n", arraySizeNum);
+        System.out.printf("Enter %d numbers:\n", arraySizeNum);
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayNum.length; i++) {
             arrayNum[i] = Double.parseDouble(reader1.readLine());
         }
-        System.out.println("Полученный массив чисел: ".concat(Arrays.toString(arrayNum)));
-        ArrayList<Double>ListOfNums = new ArrayList<>();
-        for (double arrIndexNum: arrayNum) {
+        System.out.println("The resulting array of numbers: ".concat(Arrays.toString(arrayNum)));
+        ArrayList<Double> ListOfNums = new ArrayList<>();
+        for (double arrIndexNum : arrayNum) {
             ListOfNums.add(arrIndexNum);
         }
-        System.out.print("Элементы списка: ");
+        System.out.print("List items: ");
         printListOfNums(ListOfNums);
         //Массив строк
-        System.out.println("\nВведите размерность строкового массива:");
+        System.out.println("\nEnter the dimension of the string array:");
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeStr = Integer.parseInt(reader2.readLine());
         if (arraySizeStr < 0) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         String[] arrayStr = new String[arraySizeStr];
-        System.out.printf("Введите %d строк:\n", arraySizeStr);
+        System.out.printf("Enter %d strings:\n", arraySizeStr);
         BufferedReader reader3 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayStr.length; i++) {
             arrayStr[i] = reader3.readLine();
@@ -50,10 +50,10 @@ public class Task_20 {
         reader1.close();
         reader2.close();
         reader3.close();
-        System.out.println("Полученный массив строк: ".concat(Arrays.toString(arrayStr)));
-        ArrayList<String>ListOfStr = new ArrayList<>();
+        System.out.println("The resulting array of strings: ".concat(Arrays.toString(arrayStr)));
+        ArrayList<String> ListOfStr = new ArrayList<>();
         Collections.addAll(ListOfStr, arrayStr);
-        System.out.print("Элементы списка: ");
+        System.out.print("List items: ");
         printListOfStr(ListOfStr);
     }
 

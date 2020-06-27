@@ -8,39 +8,39 @@ import java.io.InputStreamReader;
 
 public class Task_19 {
     public static void main(String[] args) throws IOException {
-        //Задание параметров двумерного массива чисел
-        System.out.println("Введите размерность двумерного численного массива (количество строк):");
+        //Setting parameters of a two-dimensional array of numbers
+        System.out.println("Enter the dimension of a two-dimensional numerical array (number of rows):");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int arrSizeNumStr = Integer.parseInt(reader.readLine());
         if (arrSizeNumStr < 1) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
-        System.out.println("Введите размерность двумерного численного массива (количество столбцов):");
+        System.out.println("Enter the dimension of a two-dimensional numerical array (number of columns):");
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
         int arrSizeNumClm = Integer.parseInt(reader1.readLine());
         if (arrSizeNumClm < 1) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
-        //Задание двух двумерных массивов чисел
+        //Defining two two-dimensional arrays of numbers
         double[][] matrixFst = new double[arrSizeNumStr][arrSizeNumClm];
         double[][] matrixScd = new double[arrSizeNumStr][arrSizeNumClm];
-        //Заполнение двумерного массива
-        System.out.printf("Введите %d чисел первого массива:\n", arrSizeNumStr * arrSizeNumClm);
+        //Filling a two-dimensional array
+        System.out.printf("Enter %d numbers of the first array:\n", arrSizeNumStr * arrSizeNumClm);
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
         for (int i = 0; i < matrixFst.length; i++) {
             for (int j = 0; j < matrixFst[i].length; j++) {
                 matrixFst[i][j] = Double.parseDouble(reader2.readLine());
             }
         }
-        System.out.println("Элементы первого массива:");
+        System.out.println("Elements of the first array:");
         for (double[] doubles : matrixFst) {
             for (double aDouble : doubles) {
                 System.out.print(aDouble + " | ");
             }
         }
-        System.out.printf("\nВведите %d чисел второго массива:\n", arrSizeNumStr * arrSizeNumClm);
+        System.out.printf("\nEnter %d numbers of the second array:\n", arrSizeNumStr * arrSizeNumClm);
         BufferedReader reader3 = new BufferedReader(new InputStreamReader(System.in));
         for (int i = 0; i < matrixScd.length; i++) {
             for (int j = 0; j < matrixScd[i].length; j++) {
@@ -51,19 +51,19 @@ public class Task_19 {
         reader1.close();
         reader2.close();
         reader3.close();
-        System.out.println("Элементы второго массива:");
+        System.out.println("Elements of the second array:");
         for (double[] doubles : matrixScd) {
             for (double aDouble : doubles) {
                 System.out.print(aDouble + " | ");
             }
         }
-        //Суммирование двух двумерных массивов
+        //Summation of two two-dimensional arrays
         for (int i = 0; i < matrixFst.length; i++) {
             for (int j = 0; j < matrixFst[i].length; j++) {
                 matrixFst[i][j] += matrixScd[i][j];
             }
         }
-        System.out.println("\nРезультат суммирования элементов двумерного массива:");
+        System.out.println("\nThe result of summing the elements of a two-dimensional array:");
         for (double[] doubles : matrixFst) {
             for (double aDouble : doubles) {
                 System.out.print(aDouble + " | ");

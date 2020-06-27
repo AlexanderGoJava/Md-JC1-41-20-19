@@ -6,18 +6,23 @@ import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Task_1 {
+
+    public static final double MOON_GRAVITY_BY_PERCENTS = 0.16;
+    public static final double EARTH_GRAVITY = 9.81;
+
     public static void main(String[] args) {
-        System.out.print("Введите массу человека, кг: ");
+        System.out.print("Enter the mass of a person, kg: ");
         Scanner sc = new Scanner(System.in);
-        double m = sc.nextDouble();
+        double mass = sc.nextDouble();
         sc.close();
-        System.out.println("Вес человека на Луне равен: " + getWeight(m) + " Ньютон(-а/-ов).");
+        System.out.println("The weight of a person on the moon is: " + getWeight(mass) + " Newton(-s).");
     }
 
-    public static double getWeight(double m) {
-        double gEarth = 9.81;
-        double gMoon = 0.16 * gEarth;
-        m *= gMoon;
-        return new BigDecimal(m).setScale(2, RoundingMode.HALF_UP).doubleValue();
+    //calculates the free fall coefficient on the moon and return weight on the moon
+    public static double getWeight(double mass) {
+        double gMoon = MOON_GRAVITY_BY_PERCENTS * EARTH_GRAVITY;
+        mass *= gMoon;
+        return new BigDecimal(mass).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
+
 }

@@ -10,20 +10,20 @@ import java.util.Arrays;
 public class Task_16 {
     public static void main(String[] args) throws IOException {
         //Массив чисел
-        System.out.println("Введите размерность численного массива:");
+        System.out.println("Enter the dimension of the numeric array:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeNum = Integer.parseInt(reader.readLine()), counter = 0, i, j;
         if (arraySizeNum < 1) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         double[] arrayNum = new double[arraySizeNum];
-        System.out.printf("Введите %d чисел:\n", arraySizeNum);
+        System.out.printf("Enter %d numbers:\n", arraySizeNum);
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayNum.length; i++) {
             arrayNum[i] = Double.parseDouble(reader1.readLine());
         }
-        System.out.println("Массив чисел до удаления повторяющихся элементов: ".concat(Arrays.toString(arrayNum)));
+        System.out.println("Array of numbers before removing duplicate elements: ".concat(Arrays.toString(arrayNum)));
         for (i = 1; i < arrayNum.length; i++) {
             for (j = arraySizeNum - 1; j >= i; j--) {
                 if (arrayNum[j - 1] > arrayNum[j]) {
@@ -31,14 +31,14 @@ public class Task_16 {
                 }
             }
         }
-        System.out.println("Массив целых чисел, отсортированный по возрастанию: ".concat(Arrays.toString(arrayNum)));
+        System.out.println("Array of integers sorted in ascending order: ".concat(Arrays.toString(arrayNum)));
         for (i = 0; i < arrayNum.length - 1; i++) {
             if (arrayNum[i] == arrayNum[i + 1]) {
                 counter++;
             }
         }
         if (counter == 0) {
-            System.out.println("Совпадений не найдено!");
+            System.out.println("No matches found!");
             System.exit(0);
         }
         double[] arrayCopyNum = new double[arrayNum.length - counter];
@@ -48,17 +48,17 @@ public class Task_16 {
                 arrayCopyNum[j += 1] = arrayNum[i + 1];
             }
         }
-        System.out.println("Массив чисел после удаления повторяющихся элементов: ".concat(Arrays.toString(arrayCopyNum)));
+        System.out.println("Array of numbers after removing duplicate elements: ".concat(Arrays.toString(arrayCopyNum)));
         //Массив строк
-        System.out.println("Введите размерность строкового массива:");
+        System.out.println("Enter the dimension of the string array:");
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeStr = Integer.parseInt(reader2.readLine());
         if (arraySizeStr < 1) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         String[] arrayStr = new String[arraySizeStr];
-        System.out.printf("Введите %d чисел:\n", arraySizeStr);
+        System.out.printf("Enter %d numbers:\n", arraySizeStr);
         BufferedReader reader3 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayStr.length; i++) {
             arrayStr[i] = reader3.readLine();
@@ -67,7 +67,7 @@ public class Task_16 {
         reader1.close();
         reader2.close();
         reader3.close();
-        System.out.println("Массив строк до удаления повторяющихся элементов: ".concat(Arrays.toString(arrayStr)));
+        System.out.println("Array of strings before removing duplicate items: ".concat(Arrays.toString(arrayStr)));
         //Сортировка строкового массива
         String temp;
         for (i = 0; i < arrayStr.length; i++) {
@@ -79,7 +79,7 @@ public class Task_16 {
                 }
             }
         }
-        System.out.println("Массив символов/строк, отсортированный по возрастанию: ".concat(Arrays.toString(arrayStr)));
+        System.out.println("Array of characters/strings, sorted ascending: ".concat(Arrays.toString(arrayStr)));
         counter = 0;
         for (i = 0; i < arrayStr.length - 1; i++) {
             if (arrayStr[i].equals(arrayStr[i + 1])) {
@@ -87,7 +87,7 @@ public class Task_16 {
             }
         }
         if (counter == 0) {
-            System.out.println("Совпадений не найдено!");
+            System.out.println("No matches found!");
             System.exit(0);
         }
         String[] arrayCopyStr = new String[arrayStr.length - counter];
@@ -97,6 +97,6 @@ public class Task_16 {
                 arrayCopyStr[j += 1] = arrayStr[i + 1];
             }
         }
-        System.out.println("Массив чисел после удаления повторяющихся элементов: ".concat(Arrays.toString(arrayCopyStr)));
+        System.out.println("Array of numbers after removing duplicate elements: ".concat(Arrays.toString(arrayCopyStr)));
     }
 }

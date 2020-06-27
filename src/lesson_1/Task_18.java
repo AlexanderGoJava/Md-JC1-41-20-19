@@ -7,15 +7,16 @@ import java.util.Scanner;
 
 public class Task_18 {
     public static void main(String[] args) {
-        System.out.println("Введите текущую сумму денежных средств на Вашем счёте, руб.:");
+        System.out.println("Enter the current amount of money in your account, rub.:");
         Scanner sc = new Scanner(System.in);
         double money = sc.nextDouble();
-        System.out.println("Введите стоимость курса валюты, $:");
+        System.out.println("Enter currency rate value, $:");
         double course = sc.nextDouble();
         sc.close();
-        System.out.println("Сумма Ваших денежных средств в пересчёте на валюту составляет, $: " + convertMoney(money, course));
+        System.out.println("The amount of your money in terms of currency is, $: " + convertMoney(money, course));
     }
 
+    //method converting rubles into dollars
     public static double convertMoney(double money, double course) {
         return new BigDecimal(money / course).setScale(3, RoundingMode.HALF_UP).doubleValue();
     }

@@ -10,40 +10,40 @@ import java.util.Arrays;
 public class Task_7 {
     public static void main(String[] args) throws IOException {
         //численный массив
-        System.out.println("Введите размерность численного массива:");
+        System.out.println("Enter the dimension of the numeric array:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeNum = Integer.parseInt(reader.readLine()), i;
         if (arraySizeNum < 0) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         double[] arrayNum = new double[arraySizeNum];
-        System.out.printf("Введите %d чисел:\n", arraySizeNum);
+        System.out.printf("Enter %d numbers:\n", arraySizeNum);
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayNum.length; i++) {
             arrayNum[i] = Double.parseDouble(reader1.readLine());
         }
-        System.out.println("Полученный массив чисел: ".concat(Arrays.toString(arrayNum)));
-        System.out.println("Введите численное значение, совпадающее с одним из элементов массива для его удаления из массива:");
+        System.out.println("The resulting array of numbers: ".concat(Arrays.toString(arrayNum)));
+        System.out.println("Enter a numerical value that matches one of the elements in the array to remove it from the array:");
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
         double specValue = Double.parseDouble(reader2.readLine());
         System.out.println(Arrays.toString(removeCellNum(arrayNum, specValue)));
         //строковый массив
-        System.out.println("Введите размерность строкового массива:");
+        System.out.println("Enter the dimension of the string array:");
         BufferedReader reader3 = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeStr = Integer.parseInt(reader3.readLine());
         if (arraySizeStr < 0) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         String[] arrayStr = new String[arraySizeStr];
-        System.out.printf("Введите %d символов/строк:\n", arraySizeStr);
+        System.out.printf("Enter %d characters/lines:\n", arraySizeStr);
         BufferedReader reader4 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayStr.length; i++) {
             arrayStr[i] = reader4.readLine();
         }
-        System.out.println("Полученный массив символов/строк: ".concat(Arrays.toString(arrayStr)));
-        System.out.println("Введите символьное/строковое значение, совпадающее с одним из элементов массива для его удаления из массива:");
+        System.out.println("The resulting array of characters/strings: ".concat(Arrays.toString(arrayStr)));
+        System.out.println("Enter a character/string value that matches one of the elements in the array to remove it from the array:");
         BufferedReader reader5 = new BufferedReader(new InputStreamReader(System.in));
         String specStr = reader5.readLine();
         reader.close();
@@ -63,12 +63,12 @@ public class Task_7 {
                 counter++;
                 System.arraycopy(arrayNum, 0, copyNum, 0, i);
                 System.arraycopy(arrayNum, i + 1, copyNum, i, arrayNum.length - i - 1);
-                System.out.print("Массив после удаления первого совпадающего элемента массива с введённым элементом: ");
+                System.out.print("Array after deleting the first matching element of the array with the entered element: ");
                 return copyNum;
             }
         }
         if (counter == 0) {
-            System.out.print("Совпадающих элементов не найдено. Массив остался без изменений: ");
+            System.out.print("No matching items found. The array remained unchanged.: ");
         }
         return arrayNum;
     }
@@ -81,12 +81,12 @@ public class Task_7 {
                 counter1++;
                 System.arraycopy(arrayStr, 0, copyStr, 0, i);
                 System.arraycopy(arrayStr, i + 1, copyStr, i, arrayStr.length - i - 1);
-                System.out.print("Массив после удаления первого совпадающего элемента массива с введённым элементом: ");
+                System.out.print("Array after deleting the first matching element of the array with the entered element: ");
                 return copyStr;
             }
         }
         if (counter1 == 0) {
-            System.out.print("Совпадающих элементов не найдено. Массив остался без изменений: ");
+            System.out.print("No matching items found. The array remained unchanged.: ");
         }
         return arrayStr;
     }

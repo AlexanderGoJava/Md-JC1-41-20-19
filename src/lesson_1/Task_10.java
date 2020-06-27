@@ -5,13 +5,14 @@ import java.util.Scanner;
 
 public class Task_10 {
     public static void main(String[] args) {
-        System.out.println("Введите 2 целых числа!");
+        System.out.println("Enter 2 integers!");
         Scanner sc = new Scanner(System.in);
-        System.out.print("Первое число: ");
+        System.out.print("First number: ");
         int a = sc.nextInt();
-        System.out.print("Второе число: ");
+        System.out.print("Second number: ");
         int b = sc.nextInt();
+        sc.close();
         int c = a + b;
-        System.out.println("Сумма двух целых чисел равна: " + c);
+        System.out.println("The sum of two integers is: " + c);
     }
 }

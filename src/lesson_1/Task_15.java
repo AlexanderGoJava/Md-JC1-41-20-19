@@ -4,18 +4,18 @@ package lesson_1;
 public class Task_15 {
     public static void main(String[] args) {
         int a = 100, i, j = 1, k = 1;
-        System.out.println("Первый цикл, for:");
+        System.out.println("First cycle, for:");
         for (i = 1; i < a; i++) {
             System.out.print(i + ", ");
         }
         System.out.println(i + ".");
-        System.out.println("Второй цикл, while:");
+        System.out.println("Second cycle, while:");
         while (j != 100) {
             System.out.print(j + ", ");
             j++;
         }
         System.out.println(j + ".");
-        System.out.println("Третий цикл, do while:");
+        System.out.println("Third cycle, do while:");
         do {
             System.out.print(k + ", ");
             k++;

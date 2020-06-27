@@ -10,54 +10,54 @@ import java.util.Arrays;
 public class Task_9 {
     public static void main(String[] args) throws IOException {
         //численный массив
-        System.out.println("Введите размерность численного массива:");
+        System.out.println("Enter the dimension of the numeric array:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeNum = Integer.parseInt(reader.readLine()), i;
         if (arraySizeNum < 0) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         double[] arrayNum = new double[arraySizeNum];
-        System.out.printf("Введите %d чисел:\n", arraySizeNum);
+        System.out.printf("Enter %d numbers:\n", arraySizeNum);
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayNum.length; i++) {
             arrayNum[i] = Double.parseDouble(reader1.readLine());
         }
-        System.out.println("Полученный массив чисел: ".concat(Arrays.toString(arrayNum)));
-        System.out.println("Введите индекс массива, в который вы хотите произвести вставку элемента:");
+        System.out.println("The resulting array of numbers: ".concat(Arrays.toString(arrayNum)));
+        System.out.println("Enter the index of the array into which you want to insert the element:");
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
         int indexNum = Integer.parseInt(reader2.readLine());
         if (indexNum < 0 || indexNum > arrayNum.length) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
-        System.out.println("Введите численное значение, которое необходимо вставить в массив:");
+        System.out.println("Enter the numerical value you want to insert into the array:");
         BufferedReader reader3 = new BufferedReader(new InputStreamReader(System.in));
         double specValue = Double.parseDouble(reader3.readLine());
-        System.out.println("Новый массив: ".concat(Arrays.toString(newArrayOfNum(arrayNum, indexNum, specValue))));
+        System.out.println("New array: ".concat(Arrays.toString(newArrayOfNum(arrayNum, indexNum, specValue))));
         //строковый массив
-        System.out.println("Введите размерность строкового массива:");
+        System.out.println("Enter the dimension of the string array:");
         BufferedReader reader4 = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeStr = Integer.parseInt(reader4.readLine());
         if (arraySizeStr < 0) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         String[] arrayStr = new String[arraySizeStr];
-        System.out.printf("Введите %d символов/строк:\n", arraySizeStr);
+        System.out.printf("Enter %d characters/lines:\n", arraySizeStr);
         BufferedReader reader5 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayStr.length; i++) {
             arrayStr[i] = reader5.readLine();
         }
-        System.out.println("Полученный массив символов/строк: ".concat(Arrays.toString(arrayStr)));
-        System.out.println("Введите индекс массива, в который вы хотите произвести вставку элемента:");
+        System.out.println("The resulting array of characters/strings: ".concat(Arrays.toString(arrayStr)));
+        System.out.println("Enter the index of the array into which you want to insert the element:");
         BufferedReader reader6 = new BufferedReader(new InputStreamReader(System.in));
         int indexStr = Integer.parseInt(reader6.readLine());
         if (indexStr < 0 || indexStr > arrayStr.length) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
-        System.out.println("Введите символьное/строковое значение, которое необходимо вставить в массив:");
+        System.out.println("Enter the character/string value to be inserted into the array:");
         BufferedReader reader7 = new BufferedReader(new InputStreamReader(System.in));
         String specStr = reader7.readLine();
         reader.close();
@@ -68,7 +68,7 @@ public class Task_9 {
         reader5.close();
         reader6.close();
         reader7.close();
-        System.out.println("Новый массив: ".concat(Arrays.toString(newArrayOfStr(arrayStr, indexStr, specStr))));
+        System.out.println("New array: ".concat(Arrays.toString(newArrayOfStr(arrayStr, indexStr, specStr))));
     }
 
     public static double[] newArrayOfNum(double[] arrayNum, int indexNum, double specValue) {

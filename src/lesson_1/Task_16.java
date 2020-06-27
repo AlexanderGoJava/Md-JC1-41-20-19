@@ -7,20 +7,21 @@ import java.util.Scanner;
 
 public class Task_16 {
     public static void main(String[] args) {
-        System.out.println("Введите 2 натуральных числа!");
+        System.out.println("Enter 2 natural numbers!");
         Scanner sc = new Scanner(System.in);
-        System.out.print("Введите меньшее число, min: ");
+        System.out.print("Enter a lower number, min: ");
         int min = sc.nextInt();
         if (min % 2 != 0) {
             min += 1;
         }
-        System.out.print("Введите большее число, max: ");
+        System.out.print("Enter a larger number, max: ");
         int max = sc.nextInt();
         if (max % 2 != 0) {
             max += 1;
         }
-        System.out.println("Ряд натуральных чётных чисел в диапазоне от min до max:");
-        for (int i = min; i < max ; i += 2) {
+        sc.close();
+        System.out.println("A series of natural even numbers ranging from min to max:");
+        for (int i = min; i < max; i += 2) {
             System.out.print(i + " ");
         }
     }

@@ -5,13 +5,14 @@ import java.util.Scanner;
 
 public class Task_9 {
     public static void main(String[] args) {
-        System.out.println("Введите 2 целых числа!");
+        System.out.println("Enter 2 integers!");
         Scanner sc = new Scanner(System.in);
-        System.out.print("Первое число, a: ");
+        System.out.print("First number, a: ");
         int a = sc.nextInt();
-        System.out.print("Второе число, b: ");
+        System.out.print("Second number, b: ");
         int b = sc.nextInt();
+        sc.close();
         a = a + b - (b = a);
-        System.out.print("Числа, поменявшиеся местами: a = " + a + " | b = " + b);
+        System.out.print("Swap Numbers: a = " + a + " | b = " + b);
     }
 }

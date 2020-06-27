@@ -13,16 +13,16 @@ public class Task_17 {
         for (i = 0; i < array.length; i++) {
             array[i] = (int) Math.pow((int) (Math.random() * 10 + 1), 2);
         }
-        System.out.println("Массив случайных чисел:\n".concat(Arrays.toString(array)));
+        System.out.println("Array of random numbers:\n".concat(Arrays.toString(array)));
         for (i = 0; i < array.length - 1; i++) {
-                if (array[i] > max) {
-                    max = array[i];
-                }
+            if (array[i] > max) {
+                max = array[i];
+            }
         }
-        System.out.println("Наибольшее число в массиве равно: " + max);
+        System.out.println("The largest number in the array is: " + max);
         for (i = 0; i < array.length; i++) {
             array[i] = new BigDecimal(array[i] / max).setScale(2, RoundingMode.HALF_UP).doubleValue();
         }
-        System.out.println("Массив, каждый элемент которого разделён на значение большего элемента:\n".concat(Arrays.toString(array)));
+        System.out.println("An array, each element of which is divided by the value of a larger element:\n".concat(Arrays.toString(array)));
     }
 }

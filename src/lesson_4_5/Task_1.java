@@ -10,6 +10,7 @@ package lesson_4_5;
 
 import lesson_4_5.domain.Car;
 import lesson_4_5.domain.TechPassport;
+import lesson_4_5.util.ArraySortUtil;
 import lesson_4_5.util.CarUtil;
 import lesson_4_5.util.TechPaspUtil;
 
@@ -22,10 +23,11 @@ public class Task_1 {
     public static void main(String[] args) throws IOException {
         System.out.print("Enter array dimension: "); //Для удобства чтения лучше вводить не более 5 элементоа
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int i = Integer.parseInt(reader.readLine());
-        System.out.println("Array of cars (without sorting):\n".concat(Arrays.toString(generateCarArray(i))));
-        Car[] cars = new Car[i];
-        carArraySort(cars);
+        int arraySize = Integer.parseInt(reader.readLine());
+        Car[] cars = new Car[arraySize];
+        System.out.println("Array of cars (without sorting):\n".concat(Arrays.toString(generateCarArray(cars))));
+        ArraySortUtil.carArrayFuelSort(cars);
+        ArraySortUtil.carArrayWeightSort(cars);
 //1st variant generation of the car
 //        Car car1 = CarUtil.generateCar();
 //        car1.printTechChar();
@@ -36,9 +38,8 @@ public class Task_1 {
 //        car2.measStopDist();
     }
 
-    public static Car[] generateCarArray(int i) throws IOException {
-        Car[] cars = new Car[i];
-        for (i = 0; i < cars.length; i++) {
+    public static Car[] generateCarArray(Car[] cars) throws IOException {
+        for (int i = 0; i < cars.length; i++) {
             Car car2 = CarUtil.generate();
             TechPassport techPassport = TechPaspUtil.generateTechPass();
             System.out.println(techPassport);
@@ -49,20 +50,4 @@ public class Task_1 {
         return cars;
     }
 
-    public static void carArraySort(Car[] cars) {
-        double[] fuel = new double[cars.length];
-        for (int i = 0; i < cars.length; i++) {
-            fuel[i] = CarUtil.generateFuel(); //some troubles at this line (we are getting null-array)
-        }
-        for (int i = 1; i < fuel.length; i++) {
-            for (int j = i - 1; j >= i; j--) {
-                if (fuel[j - 1] < fuel[j]) {
-                    double k = fuel[j];
-                    fuel[j] = fuel[j - 1];
-                    fuel[j - 1] = k;
-                }
-            }
-        }
-        System.out.println("Array of fuel volume sorted by increase:\n".concat(Arrays.toString(cars)));
-    }
 }

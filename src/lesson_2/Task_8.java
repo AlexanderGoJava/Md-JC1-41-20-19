@@ -10,31 +10,31 @@ import java.util.Arrays;
 public class Task_8 {
     public static void main(String[] args) throws IOException {
         //численный массив
-        System.out.println("Введите размерность численного массива:");
+        System.out.println("Enter the dimension of the numeric array:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeNum = Integer.parseInt(reader.readLine()), i;
         if (arraySizeNum < 0) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         double[] arrayNum = new double[arraySizeNum];
-        System.out.printf("Введите %d чисел:\n", arraySizeNum);
+        System.out.printf("Enter %d numbers:\n", arraySizeNum);
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayNum.length; i++) {
             arrayNum[i] = Double.parseDouble(reader1.readLine());
         }
-        System.out.println("Полученный массив чисел: ".concat(Arrays.toString(arrayNum)));
-        System.out.println("Скопированный массив чисел: ".concat(Arrays.toString(arrayCopyNum(arrayNum))));
+        System.out.println("The resulting array of numbers: ".concat(Arrays.toString(arrayNum)));
+        System.out.println("Copied array of numbers: ".concat(Arrays.toString(arrayCopyNum(arrayNum))));
         //строковый массив
-        System.out.println("Введите размерность строкового массива:");
+        System.out.println("Enter the dimension of the string array:");
         BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeStr = Integer.parseInt(reader2.readLine());
         if (arraySizeStr < 0) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         String[] arrayStr = new String[arraySizeStr];
-        System.out.printf("Введите %d символов/строк:\n", arraySizeStr);
+        System.out.printf("Enter %d characters/lines:\n", arraySizeStr);
         BufferedReader reader3 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayStr.length; i++) {
             arrayStr[i] = reader3.readLine();
@@ -43,8 +43,8 @@ public class Task_8 {
         reader1.close();
         reader2.close();
         reader3.close();
-        System.out.println("Полученный массив символов/строк: ".concat(Arrays.toString(arrayStr)));
-        System.out.println("Скопированный массив символов/строк: ".concat(Arrays.toString(arrayCopyStr(arrayStr))));
+        System.out.println("The resulting array of characters/strings: ".concat(Arrays.toString(arrayStr)));
+        System.out.println("The copied array of characters/strings: ".concat(Arrays.toString(arrayCopyStr(arrayStr))));
     }
 
     public static double[] arrayCopyNum(double[] arrayNum) {

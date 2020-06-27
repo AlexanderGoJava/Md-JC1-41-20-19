@@ -7,20 +7,31 @@ import java.util.Arrays;
 
 public class Task_2 {
     public static void main(String[] args) {
-        int a = (int)(Math.random() * 10 + 1);
-        double[] array = new double[a];
+        double[] array = new double[generateArraySize()];
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int)(Math.random() * 10 + 1);
+            array[i] = generateNumber();
         }
-        System.out.println("Первоначальный массив:\n".concat(Arrays.toString(array)));
-        System.out.println("Массив после увеличения каждого его элемента на 10%:\n".concat(Arrays.toString(arrayIncrease(array))));
+        System.out.println("Initial array:\n".concat(Arrays.toString(array)));
+        System.out.println("Array after increasing each of its elements by 10%:\n".concat(Arrays.toString(arrayIncrease(array))));
     }
 
+    //method that increases each element of the array by 10%
     public static double[] arrayIncrease(double[] array) {
-        for(int i = 0; i < array.length; i++) {
-            array[i] = array[i] * 1.1;
+        final float multiplicator = 1.1f;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array[i] * multiplicator;
             array[i] = BigDecimal.valueOf(array[i]).setScale(1, RoundingMode.HALF_UP).doubleValue();
-            }
+        }
         return array;
+    }
+
+    //generate random array size
+    public static int generateArraySize() {
+        return (int) (Math.random() * 10 + 1);
+    }
+
+    //generate random number of array cell
+    public static int generateNumber() {
+        return (int) (Math.random() * 10 + 1);
     }
 }

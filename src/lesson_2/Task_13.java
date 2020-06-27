@@ -9,22 +9,22 @@ import java.util.Arrays;
 
 public class Task_13 {
     public static void main(String[] args) throws IOException {
-        System.out.println("Введите размерность строкового массива:");
+        System.out.println("Enter the dimension of the string array:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int arraySizeStr = Integer.parseInt(reader.readLine()), i, j;
         if (arraySizeStr < 1) {
-            System.out.println("Введено неверное значение! Программа завершила свою работу.");
+            System.out.println("Incorrect value entered! The program has completed its work.");
             System.exit(0);
         }
         String[] arrayStr = new String[arraySizeStr];
-        System.out.printf("Введите %d символов/строк:\n", arraySizeStr);
+        System.out.printf("Enter %d characters/lines:\n", arraySizeStr);
         BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
         for (i = 0; i < arrayStr.length; i++) {
             arrayStr[i] = reader1.readLine();
         }
         reader.close();
         reader1.close();
-        System.out.println("Полученный массив символов/строк: ".concat(Arrays.toString(arrayStr)));
+        System.out.println("The resulting array of characters/strings: ".concat(Arrays.toString(arrayStr)));
         //Сортировка строкового массива
         String temp;
         for (i = 0; i < arrayStr.length; i++) {
@@ -36,10 +36,10 @@ public class Task_13 {
                 }
             }
         }
-        System.out.println("Массив символов/строк, отсортированный по возрастанию:\n".concat(Arrays.toString(arrayStr)));
+        System.out.println("Array of characters/strings, sorted ascending:\n".concat(Arrays.toString(arrayStr)));
         for (i = 0; i < arrayStr.length - 1; i++) {
             if (arrayStr[i].equals(arrayStr[i + 1])) {
-                System.out.printf("Значение элемента массива ‘%s‘ по индексу \"%d\" совпадает со значением массива ‘%s‘ по индексу \"%d\"\n", arrayStr[i], i, arrayStr[i + 1], i + 1);
+                System.out.printf("The value of the array element ‘%s‘ at the index \"%d\" coincides with the value of the array ‘%s‘ at the index \"%d\"\n", arrayStr[i], i, arrayStr[i + 1], i + 1);
             }
         }
     }
